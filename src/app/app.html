@@ -1,0 +1,1744 @@
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-content">
+
+    <!-- LOGO -->
+    <a class="logo" href="#home" aria-label="Aminetou Kane — accueil">
+      <span>AK</span>
+      <strong>Aminetou Kane</strong>
+    </a>
+
+    <!-- NAVIGATION (menu déroulant sur mobile et tablette) -->
+    <nav
+      id="main-nav"
+      class="main-nav"
+      [class.open]="menuOpen()"
+      aria-label="Navigation principale"
+      (click)="closeMenu()"
+    >
+
+      @if (isFrench()) {
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#journey">Parcours</a>
+        <a href="#contact">Contact</a>
+      }
+
+      @if (isEnglish()) {
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      }
+
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="navbar-actions">
+
+      <!-- LANGUAGE SWITCHER -->
+      <div class="language-switcher" role="group" aria-label="Langue / Language">
+
+        <button
+          type="button"
+          class="language-btn"
+          [class.active]="isFrench()"
+          [attr.aria-pressed]="isFrench()"
+          (click)="setLanguage('fr')">
+          FR
+        </button>
+
+        <span aria-hidden="true">|</span>
+
+        <button
+          type="button"
+          class="language-btn"
+          [class.active]="isEnglish()"
+          [attr.aria-pressed]="isEnglish()"
+          (click)="setLanguage('en')">
+          EN
+        </button>
+
+      </div>
+
+      <!-- CONTACT BUTTON -->
+      <a href="#contact" class="nav-button">
+        @if (isFrench()) { Discutons } @else { Let's talk }
+      </a>
+
+      <!-- MENU BUTTON (mobile / tablette) -->
+      <button
+        type="button"
+        class="menu-toggle"
+        [class.open]="menuOpen()"
+        aria-controls="main-nav"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="isFrench() ? 'Ouvrir ou fermer le menu' : 'Open or close the menu'"
+        (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+  <div class="container hero-content">
+
+    <!-- HERO TEXT -->
+    <div class="hero-text">
+
+      <!-- FR -->
+      @if (isFrench()) {
+
+        <p class="eyebrow">BONJOUR, JE SUIS</p>
+
+        <h1>
+          Aminetou<br>
+          <span>Kane</span>
+        </h1>
+
+        <h2>
+          Étudiante en informatique · Développeuse Full Stack ·
+          Passionnée par la Data & l'IA
+        </h2>
+
+        <p class="hero-description">
+          Je conçois et développe des solutions numériques utiles,
+          en combinant développement Full Stack, données et technologies
+          d'intelligence artificielle.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="primary-button">
+            Voir mes projets
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" class="secondary-button">
+            Me contacter
+          </a>
+
+        </div>
+
+      }
+
+      <!-- EN -->
+      @if (isEnglish()) {
+
+        <p class="eyebrow">HELLO, I'M</p>
+
+        <h1>
+          Aminetou<br>
+          <span>Kane</span>
+        </h1>
+
+        <h2>
+          Computer Science Student · Full Stack Developer ·
+          Data & AI Enthusiast
+        </h2>
+
+        <p class="hero-description">
+          I design and develop useful digital solutions by combining
+          Full Stack development, data, and artificial intelligence
+          technologies.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="primary-button">
+            Explore my projects
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" class="secondary-button">
+            Contact me
+          </a>
+
+        </div>
+
+      }
+
+      <!-- TECHNOLOGY TAGS -->
+      <div class="hero-tags">
+        <span>Python</span>
+        <span>Data</span>
+        <span>AI</span>
+        <span>Angular</span>
+      </div>
+
+    </div>
+
+
+    <!-- HERO VISUAL -->
+    <div class="hero-visual">
+
+      <div class="hero-photo-wrapper">
+
+        <img
+          src="images/aminetou.jpg"
+          fetchpriority="high"
+          width="816" height="1300"
+          alt="Aminetou Kane"
+          class="hero-photo"
+        >
+
+        <div class="ai-orbit orbit-1"></div>
+
+        <div class="ai-orbit orbit-2"></div>
+
+        <span class="floating-tag tag-python">
+          Python
+        </span>
+
+        <span class="floating-tag tag-data">
+          Data
+        </span>
+
+        <span class="floating-tag tag-ai">
+          AI
+        </span>
+
+        <span class="floating-tag tag-ml">
+          ML
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- QUICK INFO -->
+<section class="quick-info">
+
+  <div class="container info-grid">
+
+    <div class="info-card">
+      <span class="info-number">01</span>
+      <div>
+        @if (isFrench()) {
+          <h3>L3 Informatique</h3>
+          <p>Systèmes d'Information · UGB</p>
+        }
+
+        @if (isEnglish()) {
+          <h3>3rd Year Computer Science</h3>
+          <p>Information Systems · UGB</p>
+        }
+      </div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-number">02</span>
+      <div>
+        @if (isFrench()) {
+          <h3>Full Stack · Data · IA</h3>
+          <p>Développement de mes compétences</p>
+        }
+
+        @if (isEnglish()) {
+          <h3>Full Stack · Data · AI</h3>
+          <p>Building my expertise</p>
+        }
+      </div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-number">03</span>
+      <div>
+        @if (isFrench()) {
+          <h3>Sénégal</h3>
+          <p>Basée à Saint-Louis</p>
+        }
+
+        @if (isEnglish()) {
+          <h3>Senegal</h3>
+          <p>Based in Saint-Louis</p>
+        }
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      @if (isFrench()) {
+        <p class="section-label">01 — À PROPOS</p>
+
+        <h2>
+          Du développement logiciel
+          <span>à la Data & l'IA.</span>
+        </h2>
+      }
+
+      @if (isEnglish()) {
+        <p class="section-label">01 — ABOUT ME</p>
+
+        <h2>
+          From software development
+          <span>to Data & AI.</span>
+        </h2>
+      }
+
+    </div>
+
+
+    <div class="about-grid">
+
+      <!-- TEXT -->
+      <div class="about-text">
+
+        @if (isFrench()) {
+
+          <p>
+            Je suis étudiante en Licence 3 Informatique, spécialité
+            Systèmes d'Information, à l'Université Gaston Berger de
+            Saint-Louis.
+          </p>
+
+          <p>
+            Mon parcours m'a permis de développer une base solide en
+            programmation, bases de données, systèmes d'information et
+            développement d'applications. À travers mes projets, j'aime
+            transformer des problèmes concrets en solutions numériques utiles.
+          </p>
+
+          <p>
+            Au fil de ma formation, mon intérêt s'est progressivement orienté
+            vers la <strong>Data Science et l'Intelligence Artificielle</strong>,
+            notamment parce que je souhaite comprendre comment les données
+            peuvent être exploitées pour analyser des situations, résoudre
+            des problèmes et aider à la prise de décision.
+          </p>
+
+          <p>
+            Je développe également mes compétences en
+            <strong>Full Stack Development</strong>, qui me permettent de
+            concevoir des applications de bout en bout.
+          </p>
+
+          <p>
+            Mon objectif est de poursuivre mes études en Master et de
+            construire progressivement une expertise en
+            <strong>
+              Data Science, Intelligence Artificielle et Machine Learning.
+            </strong>
+          </p>
+
+        }
+
+
+        @if (isEnglish()) {
+
+          <p>
+            I am a third-year Computer Science student specializing in
+            Information Systems at Université Gaston Berger de Saint-Louis.
+          </p>
+
+          <p>
+            My academic journey has helped me build a solid foundation in
+            programming, databases, information systems, and application
+            development. Through my projects, I enjoy turning real-world
+            problems into useful digital solutions.
+          </p>
+
+          <p>
+            Over time, my interests have gradually shifted toward
+            <strong>Data Science and Artificial Intelligence</strong>,
+            particularly because I want to understand how data can be used
+            to analyze situations, solve problems, and support
+            decision-making.
+          </p>
+
+          <p>
+            I am also developing my skills in
+            <strong>Full Stack Development</strong>, which allows me to
+            design and build applications from end to end.
+          </p>
+
+          <p>
+            My goal is to pursue a Master's degree and progressively
+            build expertise in
+            <strong>
+              Data Science, Artificial Intelligence, and Machine Learning.
+            </strong>
+          </p>
+
+        }
+
+      </div>
+
+
+      <!-- INTERESTS CARD -->
+      <div class="about-card">
+
+        <div class="about-card-top">
+
+          @if (isFrench()) {
+            <span>CENTRES D'INTÉRÊT</span>
+          }
+
+          @if (isEnglish()) {
+            <span>INTERESTS</span>
+          }
+
+          <span>2026 →</span>
+
+        </div>
+
+
+        <div class="interest">
+
+          <strong>01</strong>
+
+          @if (isFrench()) {
+            <span>Développement Full Stack</span>
+          }
+
+          @if (isEnglish()) {
+            <span>Full Stack Development</span>
+          }
+
+        </div>
+
+
+        <div class="interest">
+
+          <strong>02</strong>
+
+          @if (isFrench()) {
+            <span>Data Science</span>
+          }
+
+          @if (isEnglish()) {
+            <span>Data Science</span>
+          }
+
+        </div>
+
+
+        <div class="interest">
+
+          <strong>03</strong>
+
+          @if (isFrench()) {
+            <span>Intelligence Artificielle</span>
+          }
+
+          @if (isEnglish()) {
+            <span>Artificial Intelligence</span>
+          }
+
+        </div>
+
+
+        <div class="interest">
+
+          <strong>04</strong>
+
+          @if (isFrench()) {
+            <span>Machine Learning</span>
+          }
+
+          @if (isEnglish()) {
+            <span>Machine Learning</span>
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      @if (isFrench()) {
+
+        <p class="section-label">
+          02 — COMPÉTENCES
+        </p>
+
+        <h2>
+          Les technologies avec lesquelles
+          <span>je travaille.</span>
+        </h2>
+
+      }
+
+      @if (isEnglish()) {
+
+        <p class="section-label">
+          02 — SKILLS
+        </p>
+
+        <h2>
+          Technologies I
+          <span>work with.</span>
+        </h2>
+
+      }
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+      <!-- =================================================
+           PROGRAMMING
+      ================================================== -->
+
+      <div class="skill-category">
+
+        <div class="skill-number">
+          01
+        </div>
+
+        @if (isFrench()) {
+
+          <h3>
+            Programmation
+          </h3>
+
+        }
+
+        @if (isEnglish()) {
+
+          <h3>
+            Programming
+          </h3>
+
+        }
+
+        <div class="skill-list">
+
+          <span>Python</span>
+          <span>C</span>
+          <span>C++</span>
+          <span>Java</span>
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           DATA & AI
+      ================================================== -->
+
+      <div class="skill-category">
+
+        <div class="skill-number">
+          02
+        </div>
+
+        <h3>
+          Data & AI
+        </h3>
+
+        <div class="skill-list">
+
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Pandas</span>
+          <span>NumPy</span>
+          <span>Matplotlib</span>
+          <span>Data Analysis</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           FULL STACK
+      ================================================== -->
+
+      <div class="skill-category">
+
+        <div class="skill-number">
+          03
+        </div>
+
+        @if (isFrench()) {
+
+          <h3>
+            Full Stack & Applications
+          </h3>
+
+        }
+
+        @if (isEnglish()) {
+
+          <h3>
+            Full Stack & Applications
+          </h3>
+
+        }
+
+        <div class="skill-list">
+
+          <span>HTML / CSS</span>
+          <span>Angular</span>
+          <span>Flutter</span>
+          <span>JavaFX</span>
+          <span>MySQL</span>
+          <span>Firebase</span>
+          <span>Git & GitHub</span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+
+  <div class="container">
+
+    <!-- SECTION TITLE -->
+    <div class="section-heading">
+
+      @if (isFrench()) {
+
+        <p class="section-label">
+          03 — PROJETS
+        </p>
+
+        <h2>
+          Des projets qui
+          <span>répondent à des problèmes réels.</span>
+        </h2>
+
+      }
+
+      @if (isEnglish()) {
+
+        <p class="section-label">
+          03 — SELECTED WORK
+        </p>
+
+        <h2>
+          Projects that
+          <span>solve real problems.</span>
+        </h2>
+
+      }
+
+    </div>
+
+
+  
+<!-- PROJECTS GRID -->
+<div class="projects-grid">
+
+  <!-- =================================================
+       PROJECT 1 — AGRILOC
+  ================================================== -->
+
+  <article class="project-card featured">
+
+
+
+
+<div class="project-image agriloc-gallery">
+  <img src="images/projects/acceuil.jpg" alt="Écran de démarrage d'AgriLoc" width="592" height="1280" loading="lazy">
+  <img src="images/projects/agriculteur.jpg" alt="Espace agriculteur AgriLoc" width="593" height="1280" loading="lazy">
+  <img src="images/projects/proprietaire.jpg" alt="Espace propriétaire AgriLoc" width="593" height="1280" loading="lazy">
+</div>
+
+    <div class="project-top">
+
+      <span class="project-type">
+        MOBILE APPLICATION
+      </span>
+
+      @if (isFrench()) {
+        <span class="project-status">
+          APPLICATION DÉVELOPPÉE
+        </span>
+      }
+
+      @if (isEnglish()) {
+        <span class="project-status">
+          APPLICATION DEVELOPED
+        </span>
+      }
+
+    </div>
+
+    <h3>AgriLoc</h3>
+
+    @if (isFrench()) {
+      <p>
+        AgriLoc est une application mobile développée avec Flutter
+        et Firebase pour faciliter la mise en relation entre les
+        propriétaires de matériel agricole et les agriculteurs
+        qui souhaitent le louer. Elle propose des espaces adaptés
+        aux différents rôles : recherche de matériel, gestion des
+        équipements, suivi des demandes de location et administration
+        des utilisateurs.
+      </p>
+    }
+
+    @if (isEnglish()) {
+      <p>
+        AgriLoc is a mobile application developed with Flutter
+        and Firebase to connect agricultural equipment owners
+        with farmers looking to rent equipment. It provides
+        role-based spaces for equipment discovery, equipment
+        management, rental request tracking and user administration.
+      </p>
+    }
+
+    <div class="project-tech">
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>Firebase Authentication</span>
+      <span>Cloud Firestore</span>
+    </div>
+
+    <div class="project-actions">
+      <a
+        href="https://github.com/aminetou-kane/agriloc"
+        class="project-link"
+        target="_blank"
+        rel="noopener noreferrer">
+        GitHub ↗
+      </a>
+    </div>
+
+  </article>
+
+
+  <!-- =================================================
+       PROJECT 2 — MEMORIA
+  ================================================== -->
+
+  <article class="project-card">
+
+    <div class="memoria-gallery">
+
+
+
+@if (memoriaImageIndex() === 0) {
+  <img src="images/projects/connexion.png" alt="Connexion à Mémoria" width="2160" height="1350">
+}
+
+@if (memoriaImageIndex() === 1) {
+  <img src="images/projects/etudiant.png" alt="Interface étudiant" width="2160" height="1350">
+}
+
+@if (memoriaImageIndex() === 2) {
+  <img src="images/projects/gestionnaire.png" alt="Interface gestionnaire" width="2160" height="1350">
+}
+
+@if (memoriaImageIndex() === 3) {
+  <img src="images/projects/admin.png" alt="Interface administrateur" width="2160" height="1350">
+}
+
+@if (memoriaImageIndex() === 4) {
+  <img src="images/projects/admin-graphiques.png" alt="Tableau de bord statistique" width="2160" height="1350">
+}
+
+<div class="memoria-counter">
+  {{ memoriaImageIndex() + 1 }} / 5
+</div>
+</div>
+
+
+    <div class="project-top">
+      <span class="project-type">APPLICATION DESKTOP</span>
+    </div>
+
+    <h3>Mémoria</h3>
+
+    @if (isFrench()) {
+      <p>
+        Application de gestion et de consultation des thèses et mémoires
+        universitaires. Les étudiants recherchent les documents et accèdent
+        aux fichiers autorisés. Les gestionnaires organisent les ressources
+        de leur UFR, tandis que les administrateurs gèrent les utilisateurs
+        et suivent l'activité grâce à un tableau de bord statistique.
+      </p>
+    }
+
+    @if (isEnglish()) {
+      <p>
+        A university thesis and dissertation management application.
+        Students search for documents and access authorized files.
+        Managers organize resources for their departments, while
+        administrators manage users and monitor activity through a
+        statistical dashboard.
+      </p>
+    }
+
+    <div class="project-tech">
+      <span>Java</span>
+      <span>JavaFX</span>
+      <span>MySQL</span>
+    </div>
+
+
+
+<div class="project-actions">
+  <a
+    href="https://memoria-e76r.onrender.com"
+    class="project-link"
+    target="_blank"
+    rel="noopener noreferrer">
+    @if (isFrench()) { Voir le site ↗ } @else { Live demo ↗ }
+  </a>
+  <a
+    href="https://github.com/aminetou-kane/memoria"
+    class="project-link"
+    target="_blank"
+    rel="noopener noreferrer">
+    GitHub ↗
+  </a>
+</div>
+
+
+
+  </article>
+
+
+<!-- =================================================
+     PROJECT 3 — CAMPUS HABITAT
+================================================== -->
+
+<article class="project-card featured campus-featured">
+
+
+<div class="project-image campus-gallery">
+
+  <!-- Diapositive 1 : Accueil -->
+  <img
+    src="images/projects/campus-accueil.webp"
+    alt="Accueil de Campus Habitat"
+    class="campus-slide slide-1"
+    width="1899" height="828"
+    loading="lazy"
+  >
+
+  <!-- Diapositive 2 : Marché -->
+  <img
+    src="images/projects/marche.png"
+    alt="Tableau de bord du marché immobilier"
+    class="campus-slide slide-2"
+    width="1903" height="826"
+    loading="lazy"
+  >
+
+  <!-- Diapositive 3 : À propos -->
+  <img
+    src="images/projects/apropos.png"
+    alt="Présentation de Campus Habitat"
+    class="campus-slide slide-3"
+    width="1894" height="829"
+    loading="lazy"
+  >
+
+</div>
+
+
+  <!-- Type de projet -->
+  <div class="project-top">
+    <span class="project-type">INFORMATION SYSTEM</span>
+  </div>
+
+  <h3>Campus Habitat</h3>
+
+  <!-- Description française -->
+  @if (isFrench()) {
+    <p>
+      Campus Habitat est une plateforme web qui centralise les annonces
+      de chambres, studios et appartements à proximité de l'UGB, à Sanar.
+      Elle facilite la recherche de logements grâce aux filtres, à la
+      comparaison des prix et des distances, aux favoris, aux itinéraires
+      à pied et au contact direct des propriétaires. Un tableau de bord
+      permet également d'analyser le marché locatif étudiant et de mieux
+      évaluer les prix proposés.
+    </p>
+  }
+
+  <!-- English description -->
+  @if (isEnglish()) {
+    <p>
+      Campus Habitat is a web platform that centralizes room, studio
+      and apartment listings near Gaston Berger University in Sanar.
+      It simplifies housing searches through filters, price and distance
+      comparisons, favorites, walking directions and direct contact with
+      property owners. A market dashboard also helps students analyze
+      rental prices and make more informed housing decisions.
+    </p>
+  }
+
+  <!-- Technologies -->
+  <div class="project-tech">
+    <span>Web Development</span>
+    <span>Data Visualization</span>
+    <span>Google Maps</span>
+    <span>LocalStorage</span>
+  </div>
+
+  <div class="project-actions">
+    <a
+      href="https://aminetou-kane.github.io/campus-habitats/"
+      class="project-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      @if (isFrench()) { Voir le site ↗ } @else { Live demo ↗ }
+    </a>
+    <a
+      href="https://github.com/aminetou-kane/campus-habitats"
+      class="project-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      GitHub ↗
+    </a>
+  </div>
+
+</article>
+
+<!-- =================================================
+     PROJECT 4 — URGENCES MÉDICALES
+================================================== -->
+
+<article class="project-card featured urgences-featured">
+
+  <!-- Galerie : 7 écrans en fondu enchaîné, avec légende -->
+  <div class="project-image urgences-gallery">
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-dashboard.webp"
+        [alt]="isFrench() ? 'Tableau de bord des urgences' : 'Emergency dashboard'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Tableau de bord } @else { Dashboard }
+      </span>
+    </div>
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-patients.webp"
+        [alt]="isFrench() ? 'Liste des patients et file d\'attente' : 'Patient list and waiting queue'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Patients et file d'attente } @else { Patients and waiting queue }
+      </span>
+    </div>
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-ressources.webp"
+        [alt]="isFrench() ? 'Gestion des ressources' : 'Resource management'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Ressources } @else { Resources }
+      </span>
+    </div>
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-stock-sang.webp"
+        [alt]="isFrench() ? 'Stock de sang par groupe' : 'Blood stock by group'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Stock de sang } @else { Blood stock }
+      </span>
+    </div>
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-demandes.webp"
+        [alt]="isFrench() ? 'Demandes de sang' : 'Blood requests'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Demandes de sang } @else { Blood requests }
+      </span>
+    </div>
+
+    <div class="gallery-slide">
+      <img
+        src="images/projects/urgences-journal.webp"
+        [alt]="isFrench() ? 'Journal d\'activité' : 'Activity log'"
+        width="1440" height="900"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Journal d'activité } @else { Activity log }
+      </span>
+    </div>
+
+    <div class="gallery-slide phone">
+      <img
+        src="images/projects/urgences-mobile.webp"
+        [alt]="isFrench() ? 'Version mobile' : 'Mobile version'"
+        width="780" height="1688"
+        loading="lazy"
+      >
+      <span class="slide-caption">
+        @if (isFrench()) { Version mobile } @else { Mobile version }
+      </span>
+    </div>
+
+  </div>
+
+  <!-- Type de projet -->
+  <div class="project-top">
+    <span class="project-type">WEB APPLICATION</span>
+  </div>
+
+  <h3>Urgences Médicales</h3>
+
+  <!-- Description française -->
+  @if (isFrench()) {
+    <p>
+      Urgences Médicales est une application web de gestion d'un service
+      d'urgences hospitalier. Elle organise le triage des patients avec une
+      file d'attente prioritaire, le suivi des lits et des équipements, et
+      une banque de sang complète (stock, donneurs, demandes). Les accès
+      dépendent du rôle (médecin, infirmier, accueil), chaque action est
+      tracée dans un journal d'activité et un tableau de bord présente les
+      indicateurs clés. Développée en PHP (architecture MVC) et MySQL, avec
+      requêtes préparées, protection CSRF et mots de passe hachés.
+    </p>
+  }
+
+  <!-- English description -->
+  @if (isEnglish()) {
+    <p>
+      Urgences Médicales is a web application for managing a hospital
+      emergency department. It handles patient triage with a priority
+      waiting queue, tracking of beds and equipment, and a complete blood
+      bank (stock, donors, requests). Access depends on the user role
+      (physician, nurse, front desk), every action is recorded in an
+      activity log, and a dashboard presents the key indicators. Built
+      with PHP (MVC architecture) and MySQL, using prepared statements,
+      CSRF protection and hashed passwords.
+    </p>
+  }
+
+  <!-- Technologies -->
+  <div class="project-tech">
+    <span>PHP</span>
+    <span>MySQL</span>
+    <span>Architecture MVC</span>
+    <span>JavaScript</span>
+    <span>HTML / CSS</span>
+  </div>
+
+  <div class="project-actions">
+    <a
+      href="https://urgences-medicales-kane.wuaze.com"
+      class="project-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      @if (isFrench()) { Voir le site ↗ } @else { Live demo ↗ }
+    </a>
+    <a
+      href="https://github.com/aminetou-kane/urgences-medicales"
+      class="project-link"
+      target="_blank"
+      rel="noopener noreferrer">
+      GitHub ↗
+    </a>
+  </div>
+
+</article>
+
+</div> <!-- fin de projects-grid -->
+</div> <!-- fin du container de Projects -->
+</section> <!-- fin de Projects -->
+
+
+
+
+<!-- =================================================
+     CERTIFICATIONS
+================================================== -->
+
+<section id="certifications" class="section certifications-section">
+  <div class="container">
+
+    <!-- TITRE -->
+    <div class="section-heading">
+      @if (isFrench()) {
+        <p class="section-label">04 — CERTIFICATIONS</p>
+        <h2>
+          Mes
+          <span>certifications.</span>
+        </h2>
+        <p class="section-subtitle">
+          Des formations pour renforcer mes compétences en Data Science
+          et en intelligence artificielle.
+        </p>
+      }
+
+      @if (isEnglish()) {
+        <p class="section-label">04 — CERTIFICATIONS</p>
+        <h2>
+          My
+          <span>certifications.</span>
+        </h2>
+        <p class="section-subtitle">
+          Training to strengthen my skills in Data Science
+          and Artificial Intelligence.
+        </p>
+      }
+    </div>
+
+    <!-- CARTE CERTIFICATION IBM -->
+    <div class="certifications-grid">
+
+      <article class="certification-card">
+
+        <!-- IMAGE DU BADGE -->
+        <div class="certification-visual">
+          <img
+            src="images/projects/certifie1.png"
+            alt="Badge IBM SkillsBuild Data Fundamentals"
+            class="certification-badge"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- INFORMATIONS -->
+        <div class="certification-content">
+
+          <span class="certification-type">DATA SCIENCE</span>
+
+          <h3>Data Fundamentals</h3>
+
+          <p class="certification-issuer">
+            IBM SkillsBuild
+          </p>
+
+          @if (isFrench()) {
+            <p class="certification-description">
+              Certification portant sur les fondamentaux des données,
+              l'analyse de données, la méthodologie CRISP-DM, ainsi que
+              le nettoyage, la préparation et la visualisation des données.
+              Elle constitue une première étape dans mon parcours vers
+              la Data Science et l'intelligence artificielle.
+            </p>
+          }
+
+          @if (isEnglish()) {
+            <p class="certification-description">
+              Certification covering data fundamentals, data analysis,
+              the CRISP-DM methodology, and data cleaning, preparation
+              and visualization. It represents an initial step in my
+              journey toward Data Science and Artificial Intelligence.
+            </p>
+          }
+
+          <!-- COMPÉTENCES -->
+          <div class="certification-skills">
+            <span>Data Analysis</span>
+            <span>CRISP-DM</span>
+            <span>Data Visualization</span>
+            <span>Data Fundamentals</span>
+          </div>
+
+          <!-- LIEN DU BADGE -->
+          <div class="project-actions">
+           <a
+  href="https://www.credly.com/badges/e328100c-d597-4fed-b715-e44bf55205c7"
+  class="project-link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  @if (isFrench()) {
+    Vérifier le badge ↗
+  }
+  @if (isEnglish()) {
+    Verify badge ↗
+  }
+</a>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- JOURNEY -->
+<section id="journey" class="section journey-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      @if (isFrench()) {
+
+        <p class="section-label">
+          05 — PARCOURS
+        </p>
+
+        <h2>
+          Mon parcours
+          <span>académique.</span>
+        </h2>
+
+      }
+
+      @if (isEnglish()) {
+
+        <p class="section-label">
+          05 — JOURNEY
+        </p>
+
+        <h2>
+          My academic
+          <span>journey.</span>
+        </h2>
+
+      }
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <!-- =================================================
+           L1
+      ================================================== -->
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">
+          2024
+        </div>
+
+        <div class="timeline-content">
+
+          @if (isFrench()) {
+
+            <h3>
+              Licence 1 — Mathématiques, Physique et Informatique
+            </h3>
+
+            <p>
+              Début de mon parcours universitaire à l'Université Gaston Berger
+              de Saint-Louis, avec une formation scientifique en mathématiques,
+              physique et informatique.
+            </p>
+
+            <span class="timeline-result">
+              Moyenne : 13,82 / 20
+            </span>
+
+          }
+
+          @if (isEnglish()) {
+
+            <h3>
+              First Year — Mathematics, Physics and Computer Science
+            </h3>
+
+            <p>
+              Beginning of my university journey at Université Gaston Berger
+              de Saint-Louis, with a scientific background in mathematics,
+              physics and computer science.
+            </p>
+
+            <span class="timeline-result">
+              GPA: 13.82 / 20
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           L2
+      ================================================== -->
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">
+          2025
+        </div>
+
+        <div class="timeline-content">
+
+          @if (isFrench()) {
+
+            <h3>
+              Licence 2 — Mathématiques, Physique et Informatique
+            </h3>
+
+            <p>
+              Poursuite de la formation scientifique avec un approfondissement
+              progressif de mes connaissances en informatique. En L2 S4,
+              mon parcours s'est davantage orienté vers l'informatique.
+            </p>
+
+            <span class="timeline-result">
+              Moyenne : 13,40 / 20
+            </span>
+
+          }
+
+          @if (isEnglish()) {
+
+            <h3>
+              Second Year — Mathematics, Physics and Computer Science
+            </h3>
+
+            <p>
+              Continued my scientific studies while progressively
+              strengthening my knowledge in computer science. During
+              the fourth semester of L2, my studies became more focused
+              on computer science.
+            </p>
+
+            <span class="timeline-result">
+              GPA: 13.40 / 20
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           L3
+      ================================================== -->
+
+      <div class="timeline-item active">
+
+        <div class="timeline-year">
+          2026
+        </div>
+
+        <div class="timeline-content">
+
+          @if (isFrench()) {
+
+            <h3>
+              Licence 3 — Informatique, spécialité Systèmes d'Information
+            </h3>
+
+            <p>
+              Formation actuellement en cours à l'Université Gaston Berger.
+              Développement de compétences en programmation, bases de données,
+              systèmes d'information et développement d'applications.
+            </p>
+
+            <span class="timeline-result">
+              Formation en cours
+            </span>
+
+          }
+
+          @if (isEnglish()) {
+
+            <h3>
+              Third Year — Computer Science, Information Systems
+            </h3>
+
+            <p>
+              Currently pursuing my studies at Université Gaston Berger,
+              developing skills in programming, databases, information
+              systems and application development.
+            </p>
+
+            <span class="timeline-result">
+              Currently studying
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           MASTER OBJECTIVE
+      ================================================== -->
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">
+          2027
+        </div>
+
+        <div class="timeline-content">
+
+          @if (isFrench()) {
+
+            <h3>
+              Objectif — Master
+            </h3>
+
+            <p>
+              Poursuivre en Master Data Science / Big Data / Intelligence
+              Artificielle afin de me spécialiser dans l’analyse de données
+              à grande échelle et l’apprentissage automatique.
+            </p>
+
+            <span class="timeline-result">
+              À venir
+            </span>
+
+          }
+
+          @if (isEnglish()) {
+
+            <h3>
+              Goal — Master's Degree
+            </h3>
+
+            <p>
+              Pursue a Master’s in Data Science / Big Data / Artificial
+              Intelligence to specialise in large-scale data analysis
+              and machine learning.
+            </p>
+
+            <span class="timeline-result">
+              Upcoming
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+
+  <div class="container">
+
+    <!-- SECTION LABEL -->
+
+    @if (isFrench()) {
+
+      <p class="section-label">
+        06 — CONTACT
+      </p>
+
+      <h2>
+        Construisons quelque chose
+        <span>de significatif.</span>
+      </h2>
+
+      <p class="contact-text">
+        Vous souhaitez échanger autour d'un projet, d'une opportunité
+        de stage, d'une collaboration ou simplement discuter
+        de technologie et de Data & AI ? N'hésitez pas à me contacter.
+      </p>
+
+    }
+
+
+    @if (isEnglish()) {
+
+      <p class="section-label">
+        06 — CONTACT
+      </p>
+
+      <h2>
+        Let's build something
+        <span>meaningful.</span>
+      </h2>
+
+      <p class="contact-text">
+        Would you like to discuss a project, an internship opportunity,
+        a collaboration, or simply talk about technology and Data & AI?
+        Feel free to get in touch.
+      </p>
+
+    }
+
+
+    <!-- CONTACT LINKS -->
+
+    <div class="contact-links">
+
+
+      <!-- EMAIL -->
+
+      <a
+        href="mailto:aminetakane076@gmail.com"
+        class="contact-link"
+      >
+
+        <span class="contact-icon">
+          ✉
+        </span>
+
+        <span>
+
+          <small>
+            Email
+          </small>
+
+          <strong>
+            aminetakane076@gmail.com
+          </strong>
+
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- LINKEDIN -->
+
+      <a
+        href="https://www.linkedin.com/in/aminetou-kane-0b05a12a7/"
+        class="contact-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="contact-icon">
+          in
+        </span>
+
+        <span>
+
+          <small>
+            LinkedIn
+          </small>
+
+          @if (isFrench()) {
+
+            <strong>
+              Mon profil LinkedIn
+            </strong>
+
+          }
+
+          @if (isEnglish()) {
+
+            <strong>
+              My LinkedIn profile
+            </strong>
+
+          }
+
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+      <!-- GITHUB -->
+
+      <a
+        href="https://github.com/aminetou-kane"
+        class="contact-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="contact-icon">
+          ⌘
+        </span>
+
+        <span>
+
+          <small>
+            GitHub
+          </small>
+
+          @if (isFrench()) {
+
+            <strong>
+              Mes projets
+            </strong>
+
+          }
+
+          @if (isEnglish()) {
+
+            <strong>
+              My projects
+            </strong>
+
+          }
+
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+    <!-- CV BUTTON (affiché quand cvAvailable = true dans app.ts) -->
+    @if (cvAvailable) {
+      <a
+        [href]="cvUrl"
+        class="primary-button contact-button"
+        download
+      >
+        @if (isFrench()) { Télécharger mon CV } @else { Download my CV }
+        <span>↓</span>
+      </a>
+    }
+
+  </div>
+
+</section>
+
+
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-content">
+
+
+    <!-- FOOTER LOGO -->
+
+    <div>
+
+      <strong>
+        AK
+      </strong>
+
+      <p>
+        Aminetou Kane
+      </p>
+
+    </div>
+
+
+    <!-- FOOTER CENTER -->
+
+    <div class="footer-center">
+
+      @if (isFrench()) {
+
+        <p>
+          Informatique · Full Stack · Data & AI
+        </p>
+
+        <p>
+          Saint-Louis, Sénégal
+        </p>
+
+      }
+
+
+      @if (isEnglish()) {
+
+        <p>
+          Computer Science · Full Stack · Data & AI
+        </p>
+
+        <p>
+          Saint-Louis, Senegal
+        </p>
+
+      }
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <a href="#home">
+
+      @if (isFrench()) {
+        Retour en haut ↑
+      }
+
+      @if (isEnglish()) {
+        Back to top ↑
+      }
+
+    </a>
+
+  </div>
+
+</footer>

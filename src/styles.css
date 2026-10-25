@@ -1,0 +1,41 @@
+/* =========================================================
+   STYLES GLOBAUX
+   (les règles html / body doivent être ici : dans le CSS d'un
+   composant Angular elles sont isolées et ne s'appliquent pas)
+========================================================= */
+
+@import '@fontsource-variable/inter/wght.css';
+
+html {
+  scroll-behavior: smooth;
+  /* évite que les titres passent sous la barre de navigation fixe */
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #f8fafc;
+  font-family: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Focus clavier visible (accessibilité) */
+:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
