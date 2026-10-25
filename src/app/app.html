@@ -789,35 +789,41 @@
 
 
     <div class="project-top">
-      <span class="project-type">APPLICATION DESKTOP</span>
+      <span class="project-type">WEB APPLICATION</span>
     </div>
 
     <h3>Mémoria</h3>
 
     @if (isFrench()) {
       <p>
-        Application de gestion et de consultation des thèses et mémoires
+        Application web de gestion et de consultation des thèses et mémoires
         universitaires. Les étudiants recherchent les documents et accèdent
         aux fichiers autorisés. Les gestionnaires organisent les ressources
         de leur UFR, tandis que les administrateurs gèrent les utilisateurs
         et suivent l'activité grâce à un tableau de bord statistique.
+        Développée avec FastAPI et MySQL, avec authentification par jetons
+        JWT et tests automatisés (pytest, GitHub Actions).
       </p>
     }
 
     @if (isEnglish()) {
       <p>
-        A university thesis and dissertation management application.
+        A university thesis and dissertation management web application.
         Students search for documents and access authorized files.
         Managers organize resources for their departments, while
         administrators manage users and monitor activity through a
-        statistical dashboard.
+        statistical dashboard. Built with FastAPI and MySQL, with JWT
+        authentication and automated tests (pytest, GitHub Actions).
       </p>
     }
 
     <div class="project-tech">
-      <span>Java</span>
-      <span>JavaFX</span>
+      <span>Python</span>
+      <span>FastAPI</span>
       <span>MySQL</span>
+      <span>JWT</span>
+      <span>JavaScript</span>
+      <span>Chart.js</span>
     </div>
 
 
